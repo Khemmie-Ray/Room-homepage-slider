@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --DarkGray: hsl(0, 0%, 63%);
+    --Black: hsl(0, 0%, 0%);
+    --White: hsl(0, 0%, 100%);
+    --Darker-Gray: hsl(0, 0%, 27%);
+}
+
+body {
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+/* ====================================
+            Typography
+==================================== */
+.titleText {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    color: var(--DarkGray);
+}
+
+a {
+    color: var(--White);
+    text-decoration: none;
+}
+
+.shopping-link {
+    color: var(--Darker-Gray);
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    font-weight: 600;
+}
+
+.col-content p {
+    line-height: 1.4;
+}
+
+.subTitle {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+}
+
+li {
+    list-style: none;
+    margin-left: 2em;
+    text-transform: lowercase;
+}
+
+
+/* ====================================
+                Layout
+==================================== */
+.navlists a:hover,
+.navlists a:focus {
+    border-bottom: 2px solid white;
+}
+
+main, .navlists, .icon,
+.footer-info, .col-2 {
+    display: flex;
+}
+
+.navlists,
+.footer-info {
+    align-items: center;
+}
+
+main {
+    min-height: 70vh;
+}
+
+header {
+    padding: .5em;
+    margin-top: 3em;
+    position: absolute;
+}
+
+.col-1 {
+    width: 60%;
+    background-position: center;
+    background-size: cover;
+}
+
+.col-2 {
+    width: 40%;
+    flex-direction: column;
+}
+
+.col-content {
+    width: 80%;
+    align-self: center;
+    margin-top: auto;
+    padding: 2em .5em;
+}
+
+.prev-btn, .next-btn {
+    background-color: var(--Black);
+    padding: 1.5em;
+    cursor: pointer;
+    transition: 0.6s ease;
+    width: 50%;
+    border: 0;
+}
+
+.icon {
+    width: 30%;
+}
+
+.prev-btn:hover, .next-btn:hover,
+.prev-btn:focus, .next-btn:focus {
+    background-color: var(--Darker-Gray);
+}
+
+.bg-dark {
+    background-image: url(images/image-about-dark.jpg);
+}
+
+.bg-light {
+    background-image: url(images/image-about-light.jpg);
+}
+
+.about-img {
+    width: 30%;
+    background-size: cover;
+    min-height: 40vh;
+    background-position: center;
+}
+
+.about-content {
+    width: 80%;
+    padding: .5em;
+    margin: 0 auto;
+}
+
+.about-content p {
+    line-height: 1.3;
+}
+
+.about-info {
+    width: 40%;
+}
+
+.mobileLogo, .mobile-btn,
+.closeIcon, .mobile,
+.mobile-icon {
+    display: none;
+}
+
+
+/* ====================================
+            Media Queries
+==================================== */
+
+@media (max-width: 600px) {
+    main, .footer-info, .col-1 {
+        flex-direction: column;
+    }
+
+    .logo, .icon {
+        display: none;
+    }
+
+    .mobile, .col-1 {
+        display: flex;
+    }
+
+   .mobile {
+    margin-top: auto;
+    margin-left: auto;
+    width: 40%;
+   }
+
+    .col-content {
+        width: 90%;
+    }
+
+    .col-1 {
+        height: 40vh;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .about-img {
+        height: 30vh;
+    }
+
+    .col-2, .col-1,
+    .about-img, .about-info,
+    .footer-info, .about-img img {
+        width: 100%;
+    }
+
+    .mobile-icon {
+        display: block;
+    }
+
+    .mpIcon {
+        right: 17%;
+        transform: translateX(-4%);
+    }
+
+    .mnIcon {
+        right: 0;
+    }
+
+    .mobileLogo, .closeIcon {
+        display: block;
+    }
+
+    .mobileLogo {
+        margin-left: 10em
+    }
+
+    .mobile-btn {
+        display: block;
+        position: absolute;
+        left: 10%;
+    }
+
+    nav {
+        height: 10vh;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--White);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .navlists a {
+        color: var(--Black);
+    }
+
+   .navlists li:first-child {
+        margin: 0;
+   }
+
+    .navlists {
+        position: absolute;
+        width: 0;
+        left: 0;
+        padding-left: 1.5em;
+        top: 15%;
+    }
+
+    .col-content {
+        margin: 3em 0 4em;
+        width: 80%;
+    }
+
+    .titleText {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        padding: 1.5em .5em;
+    }
+}
